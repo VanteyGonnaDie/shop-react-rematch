@@ -1,7 +1,20 @@
 import { createModel } from "@rematch/core";
 import { RootModel } from ".";
+import { ShoeItem } from "../types/shoe";
 
-const initialState = {}
+interface ShopModelState{
+    items: ShoeItem[]
+    loading: boolean
+    error: boolean
+    cart: ShoeItem[]
+}
+
+const initialState = {
+    items: [],
+    cart: [],
+    loading: false,
+    error: false,
+}
 
 export const shopModel = createModel<RootModel>()({
     state: initialState,
